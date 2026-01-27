@@ -1,12 +1,22 @@
-import React from 'react'
+import type { UserProps } from '../types/user'
 import Search from '../components/Search'
+import { useState } from 'react'
 
 type Props = {}
 
-const Home = (props: Props) => {
+const Home = () => {
+  const [user, setUser] = useState<UserProps | null>(null);
+
+  const loadUser = async (username: string) => {
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    const data = await res.json();
+    console.log(data);
+    // setUser(data);
+  }
+
   return (
     <div>
-      <Search />
+      <Search loadUser={loadUser} />
     </div>
   )
 }
