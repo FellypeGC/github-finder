@@ -6,7 +6,7 @@ import classes from "./Repos.module.css"
 import Loader from '../components/Loader'
 import Repo from '../components/Repo'
 
-const Respos = () => {
+const Repos = () => {
   const { username } = useParams();
   const [repos, setRepos] = useState<RepoProps | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +17,11 @@ const Respos = () => {
       const res = await fetch(`https://api.github.com/users/${username}/repos`);
       const data = await res.json();
       setIsLoading(false);
-      setRepos(data);
+      let orderedRepos = data.sort(
+        (a: RepoProps, b: RepoProps) => b.stargazers_count - a.stargazers_count
+      );
+      orderedRepos = orderedRepos.slice(0, 5);
+      setRepos(orderedRepos);
     }
     if (username) loadRepos(username);
   }, []);
@@ -40,4 +44,4 @@ const Respos = () => {
   )
 }
 
-export default Respos
+export default Repos
