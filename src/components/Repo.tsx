@@ -15,11 +15,11 @@ const Repo = ({ name, language, html_url, forks_count, stargazers_count }: RepoP
       <div className={classes.stats}>
         <div>
           <AiOutlineStar />
-          <span>{stargazers_count}</span>
+          <span className={classes.count}>{stargazers_count}</span>
         </div>
         <div>
           <AiOutlineFork />
-          <span>{forks_count}</span>
+          <span className={classes.count}>{forks_count}</span>
         </div>
       </div>
       <a href={html_url} target="_blank" className={classes.repo_btn}>
