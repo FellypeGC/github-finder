@@ -9,6 +9,7 @@
   flex: 1 0 100%;
   align-items: start;
   gap: 1rem;
+  max-width: 100%;
 }
 
 .language {

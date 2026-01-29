@@ -30,3 +30,46 @@
 .search_container button {
   background-color: #1a1a1a;
 }
+
+@media (max-width: 375px) {
+  .search {
+    height: 250px;
+    justify-content: space-around;
+  }
+
+  .search h2 {
+    text-align: left;
+  }
+
+  .search p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .search {
+    padding: 1rem; /* menos padding para caber na tela */
+    gap: 0.5rem;   /* reduzir espaço entre elementos */
+    text-align: center;
+  }
+
+  .search_container {
+    /*flex-direction: column;  coloca input e botão em coluna */
+    width: 100%;            /* ocupa toda a largura disponível */
+    gap: 0.5rem;
+  }
+
+  .search_container input,
+  .search_container button {
+    width: 100%;
+    padding: 0.6rem; /* reduzir padding para caber */
+  }
+
+  .search_container input {
+    width: 85%;
+  }
+
+  .search_container button {
+    width: 15%;
+  }
+}
