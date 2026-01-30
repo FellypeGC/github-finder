@@ -23,7 +23,7 @@ const Repo = ({ name, language, html_url, forks_count, stargazers_count }: RepoP
         </div>
       </div>
       <a href={html_url} target="_blank" className={classes.repo_btn}>
-        <span>Ver código</span>
+        <span>See code</span>
         <RiGitRepositoryLine />
       </a>
     </div>
